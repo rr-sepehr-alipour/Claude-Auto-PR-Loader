@@ -1,6 +1,6 @@
 # AI PR Description Autofiller
 
-A comprehensive toolkit that leverages AI to automatically generate GitHub pull request titles and descriptions. This repository offers three different solutions to fit your workflow preferences.
+A comprehensive toolkit that leverages AI to automatically generate GitHub pull request titles and descriptions. This repository offers four different solutions to fit your workflow preferences.
 
 ## Overview
 
@@ -51,6 +51,21 @@ A custom command for Claude Code that allows you to create PRs through conversat
 
 [See Claude Command Documentation →](./claude-command/README.md)
 
+### 4. Claude Code Agent
+**Best for:** Claude Code users who want autonomous AI workflow execution
+
+A specialized agent for Claude Code that autonomously handles the entire PR creation workflow, from analysis to submission.
+
+**Features:**
+- Autonomous workflow execution
+- Comprehensive git diff analysis
+- Automatic template population
+- PR creation with GitHub CLI integration
+- Guided validation and confirmation steps
+- Handles uncommitted changes and branch pushing
+
+[See Claude Agent Documentation →](./claude-agent/README.md)
+
 ## Quick Start
 
 ### Chrome Extension
@@ -73,6 +88,14 @@ chmod +x claude-auto-pr
 cp claude-command/auto-pr.md ~/.claude/commands/
 # Use in Claude Code:
 /auto-pr
+```
+
+### Claude Code Agent
+```bash
+# Copy agent file to your Claude agents directory
+cp claude-agent/pr-creation.md ~/.claude/agents/
+# The pr-creation agent will automatically be available in Claude Code
+# It will be invoked when you ask Claude to create a PR
 ```
 
 ## Common Requirements
@@ -106,14 +129,16 @@ All solutions automatically:
 
 ## Comparison
 
-| Feature | Chrome Extension | Bash Script | Claude Command |
-|---------|-----------------|-------------|----------------|
-| **Environment** | Browser | Terminal | Claude Code |
-| **AI Provider** | OpenAI | Claude CLI | Claude Code |
-| **Setup Complexity** | Medium | Low | Low |
-| **Interaction** | GUI | Interactive CLI | Conversational |
-| **PR Creation** | Manual copy-paste | Automatic | Automatic |
-| **Best For** | GUI lovers | CLI enthusiasts | Claude users |
+| Feature | Chrome Extension | Bash Script | Claude Command | Claude Agent |
+|---------|-----------------|-------------|----------------|--------------|
+| **Environment** | Browser | Terminal | Claude Code | Claude Code |
+| **AI Provider** | OpenAI | Claude CLI | Claude Code | Claude Code |
+| **Setup Complexity** | Medium | Low | Low | Low |
+| **Interaction** | GUI | Interactive CLI | Conversational | Autonomous |
+| **PR Creation** | Manual copy-paste | Automatic | Automatic | Automatic |
+| **Workflow** | Manual steps | Script-driven | Guided | Autonomous |
+| **Git Analysis** | Basic | Comprehensive | Comprehensive | Comprehensive |
+| **Best For** | GUI lovers | CLI enthusiasts | Claude users | Power users |
 
 ## Contributing
 
